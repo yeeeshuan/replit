@@ -1,0 +1,193 @@
+.main {
+  display: flex; 
+  height: auto; 
+}
+
+.sidebar{
+  width: 15%; 
+  background: #1C2333; 
+  height: 100vh;
+  border-right: #3C445C solid 1px; 
+  top: 0; 
+  position: sticky; 
+}
+
+.page{
+  padding: 8px; 
+  margin: 8px; 
+  border-radius: 8px; 
+}
+
+.page:hover{
+  background: #3C445C; 
+}
+
+.right {
+  width: 85%; 
+}
+.dashboard{
+  padding: 5% 10% 5% 10%; 
+}
+
+.search{
+  text-align: center;
+  padding: 16px; 
+  background: #1C2333; 
+  border-bottom: #3C445C solid 1px; 
+  position: sticky;
+  top: 0; 
+  z-index: 100; /* Adjust the z-index if needed */
+
+}
+
+.searchbar {
+  width: 70%; 
+  height: 65%; 
+  padding: 8px; 
+  background-color: #2B3245; 
+  border-radius: 8px; 
+  border: none; 
+}
+
+.create{
+  text-align: center;
+  background-color: #0053A6;
+  padding: 8px; 
+  border-radius: 8px; 
+  margin: 8px; 
+}
+
+.powerUp{
+  text-align: center;
+  background-color: #2B3245;
+  padding: 8px; 
+  border-radius: 8px; 
+  margin: 8px; 
+}
+
+.savedRow{
+  display: flex; 
+  justify-content: space-between;
+}
+
+.saved{
+  position: relative;
+  text-align: left;
+  border-radius: 8px; 
+  border: #3C445C solid 1px; 
+  transition: 300ms ease-in-out; 
+}
+
+.saved .savedTextHover
+{
+  display: none; 
+  position: absolute; 
+  bottom: 16px;
+  left: 16px;
+}
+
+.savedImg{
+  border-radius: 8px; ;
+  padding: 8px; 
+}
+
+.saved:hover{
+  border: 1px solid orange; 
+  box-sizing: border-box;
+  transition: 300ms;
+}
+
+.saved:hover .savedText{
+  display: none; 
+
+}
+
+.saved:hover .savedTextHover{
+  display: block;
+}
+
+.savedText{
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+.tag{
+  background-color: #1C2333;
+  border: 1px #4E5569 solid; 
+  padding: 8px; 
+  border-radius: 16px;
+  margin-bottom: 8px; 
+}
+
+.tagPressed{
+  background-color: #4E5569;
+  border: 1px #4E5569 solid; 
+  padding: 8px; 
+  border-radius: 16px;
+  margin-bottom: 8px; 
+}
+
+.filtering{
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.filter{
+  padding: 8px; 
+  background-color: #3C445C; 
+  border: none; 
+  border-radius: 8px;
+  margin-bottom: 1rem; 
+}
+
+.filterPopup
+{
+  position: fixed; 
+  width: 280px; 
+  height: 300px; 
+  background-color: #1C2333;
+  z-index: 100;
+  left: 50%;
+  border-radius: 8px;
+  border: 3px #F26207 solid;
+}
+
+.recc{
+  margin-top: 3rem; 
+  display: flex; 
+  justify-content: space-between;
+}
+
+.tags{
+  width: 15%; 
+}
+
+.repls{
+  width: 80%; 
+}
+
+.repl{
+  background-color: #1C2333;
+  padding: 8px; 
+  border-radius: 8px; 
+  margin-bottom: 16px; 
+  display: flex; 
+  transition: 300ms ease-in-out;
+  border: 1px #2B3245 solid; 
+}
+
+.repl:hover{
+  background-color: #3C445C; 
+}
+
+.replText{
+  margin-left: 1rem; 
+}
+
+.about{
+  display: flex; 
+  align-items: center;
+  margin-bottom: 8px; 
+}
+
