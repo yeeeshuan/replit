@@ -12,7 +12,15 @@ class Filter extends Component{
     render(){
     return(
         <div className={styles.filterPopup}>
-          <p>Filter</p>
+            <div className={styles.search}>
+                <input className={styles.searchbarSmall} defaultValue="Search & run commands"/>
+            </div>
+            <div className={styles.filterOptions}>
+                <button className={styles.filterButton}><p>Language</p></button> 
+                <button className={styles.filterButton}><p>Complexity</p></button> 
+                <button className={styles.filterButton}><p>Time</p></button> 
+                <button className={styles.filterButton}><p>People</p></button> 
+            </div>
         </div>
     )
     }

@@ -10,12 +10,7 @@
   border-right: #3C445C solid 1px; 
   top: 0; 
   position: sticky; 
-}
-
-.page{
-  padding: 8px; 
-  margin: 8px; 
-  border-radius: 8px; 
+  padding: 16px; 
 }
 
 .page:hover{
@@ -49,12 +44,33 @@
   border: none; 
 }
 
+.searchbarSmall {
+  width: 100%; 
+  height: 65%; 
+  padding: 8px; 
+  background-color: #2B3245; 
+  border-radius: 8px; 
+  border: none; 
+}
+
+.username{
+  padding: 8px; 
+  margin-bottom: 8px; 
+}
+
+.page{
+  padding: 8px; 
+  border-radius: 8px; 
+  margin-bottom: 8px;
+}
+
 .create{
   text-align: center;
   background-color: #0053A6;
-  padding: 8px; 
   border-radius: 8px; 
-  margin: 8px; 
+  width: 100%; 
+  padding: 8px; 
+  margin-bottom: 8px;
 }
 
 .powerUp{
@@ -62,7 +78,7 @@
   background-color: #2B3245;
   padding: 8px; 
   border-radius: 8px; 
-  margin: 8px; 
+  margin-bottom: 8px;
 }
 
 .savedRow{
@@ -75,7 +91,9 @@
   text-align: left;
   border-radius: 8px; 
   border: #3C445C solid 1px; 
+  background-color: #1C2333;
   transition: 300ms ease-in-out; 
+  box-sizing: border-box;
 }
 
 .saved .savedTextHover
@@ -84,6 +102,11 @@
   position: absolute; 
   bottom: 16px;
   left: 16px;
+  
+}
+
+.displaySaved{
+  margin-top: 32px; 
 }
 
 .savedImg{
@@ -92,9 +115,9 @@
 }
 
 .saved:hover{
-  border: 1px solid orange; 
   box-sizing: border-box;
   transition: 300ms;
+  background-color:  #3C445C;
 }
 
 .saved:hover .savedText{
@@ -139,13 +162,31 @@
   border: none; 
   border-radius: 8px;
   margin-bottom: 1rem; 
+  transition: 300ms; 
+}
+
+.filter:hover{
+  background-color: #4E5569;
+}
+
+.filterButton{
+  padding: 8px; 
+  background-color: #3C445C; 
+  border: 1px #4E5569 solid; 
+  border-radius: 8px;
+  margin-bottom: 1rem; 
+}
+
+.filterOptions{
+  padding: 16px; 
+  display: flex; 
+  justify-content: space-between;
 }
 
 .filterPopup
 {
   position: fixed; 
-  width: 280px; 
-  height: 300px; 
+  width: 330px; 
   background-color: #1C2333;
   z-index: 100;
   left: 50%;
@@ -179,6 +220,7 @@
 
 .repl:hover{
   background-color: #3C445C; 
+  border: 1px #F26207 solid;
 }
 
 .replText{

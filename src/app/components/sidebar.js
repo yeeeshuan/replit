@@ -21,7 +21,8 @@ class SideBar extends Component{
     }
     render(){
     return(
-        <div className={styles.projectRow}>
+        <div className={styles.sidebar}>
+            <div className={styles.username}><p>@username</p></div>
             {this.state.projects.map((project, idx) => {
                 if (idx == 0)
                 {

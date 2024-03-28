@@ -6,6 +6,7 @@ import Saved from "./components/saved";
 import Repls from "./components/repls";
 import Tags from "./components/tags";
 import Filter from "./components/filter";
+import DisplaySaved from "./components/displaySaved";
 
 import { Component, useState } from "react";
 
@@ -15,33 +16,33 @@ class Home extends Component {
     super(props);
     this.state = {
       projects: [
-        {tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
-        {tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_2.png"}, 
-        {tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_3.png"}, 
-        {tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
+        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
+        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_2.png"}, 
+        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_3.png"}, 
+        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
       ],
 
       orgRepls: [
-        {author:"Ethan Huang", profile:"/headshots/1.jpg", title: "2023 Event Website", tags: ["frontend",], about: "Website Inspiration", img: "/images/Saved_1.png",}, 
-        {author:"Dion Lewis", profile:"/headshots/1.jpg", title: "2024 Event Website", tags: ["frontend"], about: "TEDxCMU 2024 Website", img: "/images/Saved_2.png"}, 
-        {author:"Aarnav Patel", profile:"/headshots/1.jpg", title: "Another Web3 Banger", tags:["web3"], about: "Website Inspiration", img: "/images/Saved_3.png"}, 
-        {author:"Stanley Ip", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_4.png"}, 
-        {author:"Ethan Huang", profile:"/headshots/1.jpg",  title: "Cool Websites", tags: ["ML"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Dion Lewis", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Aarnav Patel", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["ML"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Stanley Ip", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
+        {author:"Ethan Huang", profile:"/headshots/1.jpg", title: "2023 Event Website", tags: ["frontend",], about: "Website Inspiration", img: "/images/Saved_1.png", drag: false}, 
+        {author:"Dion Lewis", profile:"/headshots/3.png", title: "2024 Event Website", tags: ["frontend"], about: "TEDxCMU 2024 Website", img: "/images/Saved_2.png", drag: false}, 
+        {author:"Aarnav Patel", profile:"/headshots/2.png", title: "Another Web3 Banger", tags:["web3"], about: "Website Inspiration", img: "/images/Saved_3.png", drag: false}, 
+        {author:"Stanley Ip", profile:"/headshots/4.png", title: "Cool Websites", tags: ["AI"], about: "Javascript AI Exploration", img: "/images/Saved_5.png", drag: false}, 
+        {author:"Ethan Huang", profile:"/headshots/1.jpg",  title: "ML5.js Explorations", tags: ["ML"], about: "A deep dive into Ml5.js handpose, facemesh, and more", img: "/images/Saved_6.png", drag: false}, 
+        {author:"Dion Lewis", profile:"/headshots/3.png", title: "AI Chatbot", tags: ["AI"], about: "Using ChatGPT API to create an interview chatbot", img: "/images/Saved_7.png", drag: false}, 
+        {author:"Aarnav Patel", profile:"/headshots/2.png", title: "WebGL Data Visualization Project", tags: ["frontend"], about: "WebGL intergration to Next.js", img: "/images/Saved_8.png", drag: false}, 
       ],
 
       repls: [
-        {author:"Ethan Huang", profile:"/headshots/1.jpg", title: "2023 Event Website", tags: ["frontend",], about: "Website Inspiration", img: "/images/Saved_1.png",}, 
-        {author:"Dion Lewis", profile:"/headshots/1.jpg", title: "2024 Event Website", tags: ["frontend"], about: "TEDxCMU 2024 Website", img: "/images/Saved_2.png"}, 
-        {author:"Aarnav Patel", profile:"/headshots/1.jpg", title: "Another Web3 Banger", tags:["web3"], about: "Website Inspiration", img: "/images/Saved_3.png"}, 
-        {author:"Stanley Ip", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_4.png"}, 
-        {author:"Ethan Huang", profile:"/headshots/1.jpg",  title: "Cool Websites", tags: ["ML"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Dion Lewis", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Aarnav Patel", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["ML"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
-        {author:"Stanley Ip", profile:"/headshots/1.jpg", title: "Cool Websites", tags: ["AI"], about: "Website Inspiration", img: "/images/Saved_1.png"}, 
+        {author:"Ethan Huang", profile:"/headshots/1.jpg", title: "2023 Event Website", tags: ["frontend",], about: "Website Inspiration", img: "/images/Saved_1.png", drag: false}, 
+        {author:"Dion Lewis", profile:"/headshots/3.png", title: "2024 Event Website", tags: ["frontend"], about: "TEDxCMU 2024 Website", img: "/images/Saved_2.png", drag: false}, 
+        {author:"Aarnav Patel", profile:"/headshots/2.png", title: "Another Web3 Banger", tags:["web3"], about: "Website Inspiration", img: "/images/Saved_3.png", drag: false}, 
+        {author:"Stanley Ip", profile:"/headshots/4.png", title: "Cool Websites", tags: ["AI"], about: "Javascript AI Exploration", img: "/images/Saved_5.png", drag: false}, 
+        {author:"Ethan Huang", profile:"/headshots/1.jpg",  title: "ML5.js Explorations", tags: ["ML"], about: "A deep dive into Ml5.js handpose, facemesh, and more", img: "/images/Saved_6.png", drag: false}, 
+        {author:"Dion Lewis", profile:"/headshots/3.png", title: "AI Chatbot", tags: ["AI"], about: "Using ChatGPT API to create an interview chatbot", img: "/images/Saved_7.png", drag: false}, 
+        {author:"Aarnav Patel", profile:"/headshots/2.png", title: "WebGL Data Visualization Project", tags: ["frontend"], about: "WebGL intergration to Next.js", img: "/images/Saved_8.png", drag: false}, 
       ],
+
+      saved1: [],
 
       tags: [
         {tag: "frontend", pressed: false},
@@ -50,11 +51,53 @@ class Home extends Component {
         {tag: "ML", pressed: false},  
       ],
 
-      clickedTags : [],
+      clickedTags: [],
 
-      filterClicked: false
+      filterClicked: false, 
+
+      draggedTo: -1, 
+
+      displaySaved: -1,
 
     }
+  }
+
+  setDraggedTo = (idx) => {
+    this.setState({draggedTo: idx });
+  }
+
+  setDisplaySaved = (idx) => {
+    this.setState({displaySaved: idx });
+  }
+
+
+
+  // Function to set repl.drag to true
+  onDrag = (repl, idx) => {
+    const updatedRepls = this.state.repls.map(item =>
+      item === repl ? { ...item, drag: true } : item
+    );
+    this.setState({ repls: updatedRepls, dragged: idx });
+  }
+
+  // Function to set repl.drag to false
+  offDrag = (repl) => {
+    const updatedRepls = this.state.repls.map(item =>
+      item === repl ? { ...item, drag: false } : item
+    );
+    this.setState({ repls: updatedRepls });
+  }
+
+  addSaved = (replId, savedId) => {
+    console.log(replId, savedId); 
+    if (savedId == 0 && !(this.state.saved1).includes(this.state.repls[replId]))
+    {
+      this.setState({
+        saved1: [...this.state.saved1, this.state.repls[replId]]
+      })
+    }
+
+    console.log(this.state.saved1); 
   }
 
   //for when filter is clicked
@@ -131,26 +174,36 @@ class Home extends Component {
     return (
       <>
       <main className={styles.main}>
-          <div className={styles.sidebar}>
-            <SideBar/>
-          </div>
+          <SideBar/>
           <div className={styles.right}>
             <div className={styles.search}>
               <input className={styles.searchbar} defaultValue="Search & run commands"/>
             </div>
             <div className={styles.dashboard}>
               <div className={styles.header}>
-                <Saved projects={this.state.projects}/>
+                <Saved projects={this.state.projects} repls={this.state.repls} dragged={this.state.draggedTo} setDraggedTo={this.setDraggedTo} setDisplaySaved={this.setDisplaySaved} onEnter={this.addSaved}/>
               </div>
-              <div className={styles.recc}>
-                <div className={styles.tags}>
-                  <Tags repls={this.state.repls} tags={this.state.tags} clickTag={this.clickTag}/>
+
+              {this.state.displaySaved == -1 && (
+                <div className={styles.recc}>
+                  <div className={styles.tags}>
+                    <Tags repls={this.state.repls} tags={this.state.tags} clickTag={this.clickTag}/>
+                  </div>
+                  <div className={styles.repls}>
+                    {this.state.filterClicked && <Filter/>}
+                    <Repls repls={this.state.repls} clickFilter={this.clickFilter} onDrag={this.onDrag} offDrag={this.offDrag}/>
+                  </div>
                 </div>
-                <div className={styles.repls}>
-                  {this.state.filterClicked && <Filter/>}
-                  <Repls repls={this.state.repls} clickFilter={this.clickFilter}/>
+              )
+              }
+
+              {this.state.displaySaved == 0 && (
+                <div className={styles.displaySaved}>
+                  <DisplaySaved repls={this.state.saved1}/>
                 </div>
-              </div>
+              )
+              }
+
             </div>
           </div>
       </main>
