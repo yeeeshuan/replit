@@ -223,9 +223,16 @@
   margin-left: 1rem; 
 }
 
+.displaySaved{
+  margin-top: 48px;
+}
+
 .about{
   display: flex; 
   align-items: center;
   margin-bottom: 8px; 
 }
 
+.back{
+  padding: 8px; 
+}

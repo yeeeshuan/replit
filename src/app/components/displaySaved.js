@@ -12,8 +12,15 @@ class displaySaved extends Component{
     render(){
     return(
         <div className={styles.replRow}>
-            <div className={styles.filtering}>
-                <button className={styles.filter}><p>Filter</p></button> 
+            <div className={styles.savedRow}>
+                <div onClick={()=>this.props.clickBack()}>
+                    <div className={styles.back}>
+                        <p>BACK</p>
+                    </div>
+                </div>
+                <div className={styles.filtering}>
+                    <button className={styles.filter}><p>Filter</p></button> 
+                </div>
             </div>
             {this.props.repls.map((repl, idx) => {
                     return (

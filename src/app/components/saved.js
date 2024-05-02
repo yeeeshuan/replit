@@ -12,6 +12,7 @@ class Saved extends Component {
 
     handleDragEnter = (idx, event) => {
         event.preventDefault();
+        console.log(idx); 
 
         let repls = this.props.repls; 
         let replId = -1; 
@@ -25,6 +26,7 @@ class Saved extends Component {
             }
         }
 
+        console.log("entered");
         this.props.onEnter(replId, idx);
         this.props.setDraggedTo(idx); 
         this.setState({ dragEnter: true });

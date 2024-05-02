@@ -9,6 +9,7 @@ import Filter from "./components/filter";
 import DisplaySaved from "./components/displaySaved";
 
 import { Component, useState } from "react";
+import displaySaved from "./components/displaySaved";
 
 class Home extends Component {
 
@@ -17,9 +18,9 @@ class Home extends Component {
     this.state = {
       projects: [
         {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
-        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_2.png"}, 
-        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_3.png"}, 
-        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
+        {drag: false, tag: "Web3 Projects", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_2.png"}, 
+        {drag: false, tag: "AI Inspo", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_3.png"}, 
+        {drag: false, tag: "ML Docs", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
       ],
 
       orgRepls: [
@@ -42,7 +43,7 @@ class Home extends Component {
         {author:"Aarnav Patel", profile:"/headshots/2.png", title: "WebGL Data Visualization Project", tags: ["frontend"], about: "WebGL intergration to Next.js", img: "/images/Saved_8.png", drag: false}, 
       ],
 
-      saved1: [],
+      saved: [[],[],[],[]],
 
       tags: [
         {tag: "frontend", pressed: false},
@@ -70,8 +71,6 @@ class Home extends Component {
     this.setState({displaySaved: idx });
   }
 
-
-
   // Function to set repl.drag to true
   onDrag = (repl, idx) => {
     const updatedRepls = this.state.repls.map(item =>
@@ -90,15 +89,26 @@ class Home extends Component {
 
   addSaved = (replId, savedId) => {
     console.log(replId, savedId); 
-    if (savedId == 0 && !(this.state.saved1).includes(this.state.repls[replId]))
+    console.log("addSaved"); 
+    
+    // Create a copy of the saved array
+    const temp = [...this.state.saved]; 
+    console.log("temp", temp); 
+    
+    // Add the element from the repls array to the saved array at the specified index
+    if (!temp[savedId].includes(this.state.repls[replId]))
     {
+      temp[savedId] = [...temp[savedId], this.state.repls[replId]]; 
+      console.log("temp after", temp); 
       this.setState({
-        saved1: [...this.state.saved1, this.state.repls[replId]]
+          saved: temp,
       })
     }
-
-    console.log(this.state.saved1); 
-  }
+  // }
+    // Log the updated saved state after setState is completed
+    console.log(this.state.saved);
+    
+};
 
   //for when filter is clicked
   clickFilter = () =>
@@ -107,6 +117,7 @@ class Home extends Component {
      filterClicked: !this.state.filterClicked
     })
   }
+
 
   //onClick for tags
   clickTag = (idx, tag) =>
@@ -169,6 +180,12 @@ class Home extends Component {
 
   }
 
+  clickBack = () =>{
+    this.setState({
+      displaySaved: -1
+    })
+  }
+
 
   render() {
     return (
@@ -197,9 +214,9 @@ class Home extends Component {
               )
               }
 
-              {this.state.displaySaved == 0 && (
+              {this.state.displaySaved != -1 && (
                 <div className={styles.displaySaved}>
-                  <DisplaySaved repls={this.state.saved1}/>
+                  <DisplaySaved repls={this.state.saved[this.state.displaySaved]} clickBack={this.clickBack}/>
                 </div>
               )
               }
