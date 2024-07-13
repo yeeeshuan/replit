@@ -193,7 +193,6 @@ class Home extends Component {
           <SideBar/>
           <div className={styles.right}>
             <div className={styles.search}>
-              {/* <input className={styles.searchbar} defaultValue="Search & run commands"/> */}
             </div>
             <div className={styles.dashboard}>
               <div className={styles.header}>
