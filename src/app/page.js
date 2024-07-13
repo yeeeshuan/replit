@@ -9,7 +9,6 @@ import Filter from "./components/filter";
 import DisplaySaved from "./components/displaySaved";
 
 import { Component, useState } from "react";
-import displaySaved from "./components/displaySaved";
 
 class Home extends Component {
 
@@ -17,10 +16,10 @@ class Home extends Component {
     super(props);
     this.state = {
       projects: [
-        {drag: false, tag: "Cool Websites", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
-        {drag: false, tag: "Web3 Projects", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_2.png"}, 
-        {drag: false, tag: "AI Inspo", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_3.png"}, 
-        {drag: false, tag: "ML Docs", title: "Website Inspiration", about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",  img: "/images/Saved_1.png"}, 
+        {drag: false, tag: "Cool Websites", title: "Cool reference websites", about: "Interesting websites to serve as inspiration for future projects.",  img: "/images/Saved_1.png"}, 
+        {drag: false, tag: "WebGL Projects", title: "Learning WebGL", about: "For .",  img: "/images/Saved_2.png"}, 
+        {drag: false, tag: "AI Inspo", title: "AI Project Inspiration", about: "AI documentation for the Design of AI class.",  img: "/images/Saved_3.png"}, 
+        {drag: false, tag: "ML Docs", title: "Machine Learning Projects", about: "Docs for ML Projects as reference.",  img: "/images/Saved_1.png"}, 
       ],
 
       orgRepls: [
@@ -190,11 +189,11 @@ class Home extends Component {
   render() {
     return (
       <>
-      <main className={styles.main}>
+      <main className={styles.main} style={{backgroundColor: "black"}}>
           <SideBar/>
           <div className={styles.right}>
             <div className={styles.search}>
-              <input className={styles.searchbar} defaultValue="Search & run commands"/>
+              {/* <input className={styles.searchbar} defaultValue="Search & run commands"/> */}
             </div>
             <div className={styles.dashboard}>
               <div className={styles.header}>

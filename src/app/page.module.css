@@ -27,6 +27,7 @@
 .search{
   text-align: center;
   padding: 16px; 
+  height: 3rem; 
   background: #1C2333; 
   border-bottom: #3C445C solid 1px; 
   position: sticky;
